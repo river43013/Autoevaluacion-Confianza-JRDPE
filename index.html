@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Autoevaluación anónima de confianza y coherencia en el liderazgo.">
+  <title>Autoevaluación de confianza del líder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__mark" aria-hidden="true">✦</div>
+    <p class="eyebrow">AUTOEVALUACIÓN DE LIDERAZGO</p>
+    <h1>¿Qué tan predecible es tu liderazgo?</h1>
+    <p class="hero__copy">Responde siete situaciones con honestidad. No existen respuestas asociadas a tu nombre y al finalizar recibirás una reflexión personalizada.</p>
+    <div class="meta">
+      <span>7 situaciones</span><span>3–5 minutos</span><span>Respuesta anónima</span>
+    </div>
+    <p id="sessionBadge" class="session-badge" hidden></p>
+  </header>
+
+  <main>
+    <form id="assessmentForm" novalidate>
+      <div id="questions"></div>
+
+      <section class="reflection-card" aria-labelledby="reflectionTitle">
+        <p class="eyebrow">PARA CERRAR</p>
+        <h2 id="reflectionTitle">Una pregunta para llevarte</h2>
+        <label for="reflection">¿Qué tendrías que empezar a hacer —o dejar de hacer— para que tu equipo sepa con mayor claridad qué puede esperar de ti?</label>
+        <textarea id="reflection" name="reflection" maxlength="1000" rows="5" placeholder="Escribe tu reflexión (opcional)"></textarea>
+        <div class="counter"><span id="charCount">0</span>/1000</div>
+      </section>
+
+      <div id="formError" class="form-error" role="alert" hidden></div>
+      <button id="submitButton" class="primary-button" type="submit">
+        <span>Ver mi resultado</span><span aria-hidden="true">→</span>
+      </button>
+      <p class="privacy-note">Tu respuesta se almacena sin nombre, correo ni DNI.</p>
+    </form>
+
+    <section id="result" class="result" aria-live="polite" hidden>
+      <div class="result__icon" aria-hidden="true">✦</div>
+      <p class="eyebrow">RESULTADO DE TU AUTOEVALUACIÓN</p>
+      <h2 id="resultTitle"></h2>
+      <div class="score"><strong id="scoreValue"></strong><span>/ 28</span></div>
+      <div class="meter" aria-hidden="true"><div id="meterFill"></div></div>
+      <p id="resultMessage" class="result__message"></p>
+      <div class="result__reflection">
+        <h3>La confianza se vuelve visible cuando…</h3>
+        <p>Las personas pueden anticipar cómo actuarás: comunicas a tiempo, explicas tus criterios, cumples lo que prometes o renegocias con transparencia y sostienes estándares justos, incluso cuando cambian la situación o la persona.</p>
+      </div>
+      <button id="restartButton" class="secondary-button" type="button">Realizar nuevamente</button>
+    </section>
+  </main>
+
+  <footer>Desarrollo del Talento Individual · Farmacias Peruanas</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
